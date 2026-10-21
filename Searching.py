@@ -77,12 +77,45 @@
 #    print(grades[index])
 
 #binary search
-def bin_search(key,array):
+#def bin_search(key,array):
+    #lo = 0
+    #hi = len(array)-1
+    #while lo <= hi:
+        #mid = (lo+hi) // 2
+        #val = array[mid]
+        #print(val)
+        #if key == val:
+            #print(val)
+            #return True
+        #elif key< val:
+            #hi = mid -1
+        #else: #key > val
+            #lo = mid + 1
+    #return 'found'
+
+#lst = [-2,3,6,11,223,1001]
+#print(bin_search(3,lst))  
+#print(bin_search(10,lst))  
+
+#HW3
+
+def read_words_from_url(url):
+    import requests
+    response = requests.get(url, stream = True)
+    words = [line.decode('utf-8').strip() for line in response.iter_lines()]
+    return words
+
+url = 'https://raw.githubusercontent.com/dwyl/english-words/refs/heads/master/words_alpha.txt'
+lst = read_words_from_url(url)[-10:]
+print(lst)
+
+import time
+def bin_search(key,lst):
     lo = 0
-    hi = len(array)-1
+    hi = len(lst)-1
     while lo <= hi:
         mid = (lo+hi) // 2
-        val = array[mid]
+        val = lst[mid]
         print(val)
         if key == val:
             print(val)
@@ -92,9 +125,26 @@ def bin_search(key,array):
         else: #key > val
             lo = mid + 1
     return 'found'
+m = bin_search('zwinglian',lst)
+print(m)
 
-lst = [-2,3,6,11,223,1001]
-print(bin_search(3,lst))  
-#print(bin_search(10,lst))  
+def seq_search(key,lst):
+    index = 0
+    found = False
+    while not found and index < len(lst):
+        if lst[index] == key:
+            found = True
+            print(f'{key}')
+        index += 1
+    return found
+y = seq_search('zwanziger',lst)
+print(y)
+
+
+
+
+
+
+
 
 
