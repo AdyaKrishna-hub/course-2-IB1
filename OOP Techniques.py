@@ -92,6 +92,8 @@ class Course:
 course = Course('CS SL','Coding', 'Jarmo','100000')
 print(course)
 print(course.__str__())
+
+
 #HW4
 import math
 class Point:
@@ -128,6 +130,9 @@ print(b.is_on_x_axis())
 print(a.distance(b))
 print(Point(1,1).in_unitcircle())
 print(a.midpoint(b))
+
+
+
     
     
 
