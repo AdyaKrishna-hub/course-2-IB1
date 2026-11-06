@@ -1,0 +1,39 @@
+#class Point:
+    #def __init__(self, x, y):
+       # self.x = x
+        #self.y = y
+
+    #def __str__(self):
+        #return f'({self.x}, {self.y})'
+
+#import pickle, pathlib # pickle for storage, hehe
+#file_path = pathlib.Path('data') / 'points.ser' # file on drive
+#points_written = [Point(x, x**2) for x in range(20)] # some data
+#print(points_written[-1]) # last point written
+
+# serialize / pickle onto drive
+#f = open(file_path, 'wb') # open file for writing binary data
+#pickle.dump(points_written, f) # save data into file
+#f.close() # close file
+
+# deserialize / unpickle from drive
+#f = open(file_path, 'rb') # open for reading binary data
+#points_read = pickle.load(f) # read and return data
+#f.close() # close file
+#print(points_read[-1]) # last point read
+
+#HW1
+#1.1
+import random
+b = [random.randint(1, 100) for _ in range(10)]
+
+#HW1.2
+import pickle,pathlib
+with open('haha.txt','w') as f:
+    for h in f:
+        f.write(f'{h}\n')
+with open('numbers.txt') as f:
+    numbers = [int(line) for line in f]
+    
+
+
